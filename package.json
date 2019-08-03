@@ -1,6 +1,6 @@
 {
-  "name": "typescript-boilerplate",
-  "description": "a simple template and easy to start for a project using Typescript and Jest",
+  "name": "ts-lib-boilerplate",
+  "description": "a simple template and easy to start for a library using Typescript and Jest",
   "version": "0.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -11,17 +11,22 @@
     "url": "https://lamhieu.info"
   },
   "scripts": {
+    "lint": "tslint --config tslint.json '**/*.ts{,x}' --exclude '**/+(build|node_modules|coverage)/**'",
+    "lint:fix": "yarn lint --fix",
     "clean": "rimraf ./build ./coverage",
-    "dev": "tsc -p tsconfig.dev.json",
-    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -w -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "precommit": "yarn lint:fix && yarn test",
+    "prepush": "yarn precommit && yarn clean && yarn build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "jest": "^24.8.0",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {

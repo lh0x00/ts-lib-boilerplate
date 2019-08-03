@@ -7,7 +7,7 @@
   "rules": {
     "quotemark": [true, "single"],
     "trailing-comma": [true],
-    "semicolon": [true, "never"],
+    "semicolon": [true, "always"],
     "ordered-imports": [true],
     "max-line-length": [true, 100],
     "no-console": false,

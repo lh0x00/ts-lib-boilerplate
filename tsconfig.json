@@ -2,7 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "umd",
-    "moduleResolution": "node",
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -10,7 +9,7 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "declaration": true,
-    "outDir": "./build",
+    "outDir": "build",
     "skipLibCheck": true,
     "importHelpers": true
   },
